@@ -3,7 +3,7 @@
 This script generates random decrypted SMB2 session key. This key is used in NTLM authentication mechanism. 
 Generating the key allows us to decrypt SMB communication in PCAP file (for example in Wireshark).
 
-I found the original script [here](https://medium.com/maverislabs/decrypting-smb3-traffic-with-just-a-pcap-absolutely-maybe-712ed23ff6a2) while trying to solve a CTF and created by own version of it in Python 3.
+I found the original script [here](https://medium.com/maverislabs/decrypting-smb3-traffic-with-just-a-pcap-absolutely-maybe-712ed23ff6a2) while trying to solve [TryHackMe Block CTF](https://tryhackme.com/r/room/blockroom) and created my own version of it in Python 3.
 
 # 📦 Installation
 ```
@@ -34,7 +34,7 @@ options:
 
 # 🖥️ Usage
 
-You need to provide user's password (-p) or NTLM hash (--ntHash).
+**Required parameters are:** username (-u), domain name (-d), NTPROOFSTR (-n), encrypted session key (in hex, -k), password (-p) or NTLM hash (--ntHash).
 
 ```bash
 $ python3 smb-key-gen.py -u mrealman --ntHash 1f9175a516211660c7a8143b0f36ab44 -d WORKGROUP -n 16e816dead16d4ca7d5d6dee4a015c14 -k fde53b54cb676b9bbf0fb1fbef384698
@@ -42,7 +42,7 @@ $ python3 smb-key-gen.py -u mrealman --ntHash 1f9175a516211660c7a8143b0f36ab44 -
 20a642c086ef74eee26277bf1d0cff8c
 
 ```
-Or using verbose flag
+You can also use verbose flag (-v) to get more information.
 
 ```bash
 $ python3 smb-key-gen.py -u mrealman --ntHash 1f9175a516211660c7a8143b0f36ab44 -d WORKGROUP -n 16e816dead16d4ca7d5d6dee4a015c14 -k fde53b54cb676b9bbf0fb1fbef384698 -v
