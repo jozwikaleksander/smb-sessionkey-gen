@@ -1,7 +1,7 @@
 # SMB2 Session Key Generator
 
 This script generates random decrypted SMB2 session key. This key is used in NTLM authentication mechanism. 
-Generating the key allows us to decrypt SMB communication in PCAP file (for example in Wireshark).
+Generating the key allows us to decrypt SMB communication in PCAP file (for example in Wireshark). More information you will find [here](https://aleksanderjozwik.com/write-ups/entries/thm/block/index.html).
 
 I found the original script [here](https://medium.com/maverislabs/decrypting-smb3-traffic-with-just-a-pcap-absolutely-maybe-712ed23ff6a2) while trying to solve [TryHackMe Block CTF](https://tryhackme.com/r/room/blockroom) and created my own version of it in Python 3.
 
